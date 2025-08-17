@@ -6,7 +6,7 @@ The dataset contains informationsuch as category, name, mrp, discounted selling 
 The main objective is to make the data consistent, remove errors, and extract meaningfull insights thatcould help in **bussiness analytics and descision-making**.
 
 ## STEPS PERFORMED
--1. **Data cleaning**
+1. **Data cleaning**
 -We did not had duplicates.
 -Handled and deleted data we did not wanted.
 
@@ -26,6 +26,24 @@ The main objective is to make the data consistent, remove errors, and extract me
 ## SQL FUNCTIONS USED
 - 'count','group by','case when','order by','having',
 'delete', 'update'.
+
+## SOME EXAMPLE QUERIES
+select distinct category from zepto_v2
+order by category;
+
+select outofstock, count(*)
+from zepto_v2
+group by outofstock;
+
+select name, count(*) as no_of_times from zepto_v2
+group by name
+having count(*) > 1
+order by count(*) desc;
+
+## HOW TO USE
+- Import data into Mysql workbench.
+- Run queries from 'sql_scripts' folder.
+- view cleaned and standardized dataset.
 
 ## RESULTS
 - Reduced dataset size by 10% after cleaning
